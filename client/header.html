@@ -18,7 +18,10 @@
           <li><a href="/">Home</a></li>
           <li><a href="/About">About</a></li>
           <li><a href="/Contact">Contact</a></li>
+
+          {{#if currentUser}}
           <li><a href="/Feed">Feed</a></li>
+          {{/if}}
           <li>{{> atNavButton}}</li>
         </ul>        
       </div><!-- /.navbar-collapse -->
