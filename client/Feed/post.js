@@ -17,6 +17,9 @@ Template.post.helpers({ //helper é tudo que usamos para mostrar algo no templat
 		} else {
             return true; // se o id dele estiver lá, retornar true
 	    }
+	},
+	comments: function() {
+		return Comments.find({post: this._id}).fetch(); //vai procurar na collection comments o comentário com tal _id. isso entrega todos os elementos da collection que estão linkados com o id daquele post. fetch vai entregar os comments pra gnt. para fazer o filtro só dos comments daquel post colocamos a {post: this._id}, difrente de deixar o ()
 	}
 });
 

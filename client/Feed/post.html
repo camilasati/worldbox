@@ -11,6 +11,12 @@
           <button class="btn btn-default like-button">Like</button>
           {{/if}} 
           <div>{{likenumbers}} likes</div>
+          
+          {{#each comments}} 
+            {{> comment}}
+          {{/each}}
+
+          {{> newcomment}}
         </div>
   </div>
 </template>
