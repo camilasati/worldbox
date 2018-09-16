@@ -6,6 +6,6 @@ Template.newcomment.events({
 
 		Meteor.call("insertcomment", text, postId);
 
-		event.target.text.value = "";
+		event.target.text.value = ""; //função pra que quando a pessoa digitar o campo fique em branco
 	}
 });
