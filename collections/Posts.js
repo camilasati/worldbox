@@ -2,7 +2,7 @@ Posts= new Mongo.Collection("posts");
 
 Meteor.methods({
 	"inserirPost": function(textform) {
-        if(Meteor.userId() !==null) {
+        if(Meteor.userId() !==null && textform) { //&& para mostrar as duas condições que devem ser avaliadas para validar o post
             Posts.insert({
 			    text: textform,
 			    userId: Meteor.userId(),
