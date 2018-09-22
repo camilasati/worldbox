@@ -6,7 +6,7 @@ Template.Profile.helpers({
 	},
 	posts: function() {
 		var userId = FlowRouter.getParam("id");
-		var profilePosts = Posts.find({userId: userId}).fetch();
+		var profilePosts = Posts.find({userId: userId}).fetch().reverse();
 		return profilePosts;
 	},
 	follow: function() {
