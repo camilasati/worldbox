@@ -26,3 +26,5 @@ useraccounts:bootstrap
 accounts-password
 useraccounts:flow-routing
 sergeyt:typeahead
+cfs:gridfs
+cfs:standard-packages

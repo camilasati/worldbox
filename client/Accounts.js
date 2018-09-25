@@ -30,7 +30,7 @@ AccountsTemplates.addFields([
   {
     _id: "username",
     type: "text",
-    displayName: "username",
+    displayName: "usernameDoAutor",
     required: true,
     minLength: 3,
   },

@@ -1,12 +1,13 @@
 Posts= new Mongo.Collection("posts");
 
-Meteor.methods({
-	"inserirPost": function(textform) {
+Meteor.methods({ //método de como se cria o post
+	"inserirPost": function(textform, imagesURL) {
         if(Meteor.userId() !==null && textform) { //&& para mostrar as duas condições que devem ser avaliadas para validar o post
             Posts.insert({
 			    text: textform,
 			    userId: Meteor.userId(),
-			    likes: []
+			    likes: [],
+			    image: imagesURL
 		    });	
         }
 	},
