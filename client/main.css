@@ -63,3 +63,11 @@ body {
 .fa{
   font-size: 25px;
 }
+
+.link-to-profile {
+  color: black;
+}
+
+.link-to-profile:hover {
+  color: black;
+}

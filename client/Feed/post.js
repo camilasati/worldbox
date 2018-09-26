@@ -1,3 +1,7 @@
+Template.post.onCreated(function() {
+   Meteor.subscribe("Comments", this.data._id);
+});
+
 Template.post.helpers({ //helper é tudo que usamos para mostrar algo no template
 	usernameDoAutor: function() {
 		var userId = this.userId;
@@ -12,7 +16,7 @@ Template.post.helpers({ //helper é tudo que usamos para mostrar algo no templat
 		var likes = this.likes; //1= mostra que o que tem do lado direito significa o que está do esquerdo
 		var position = likes.indexOf(Meteor.userId()); //jeito que procuramos pelo id do usuário dentro da lista de likes
 // position pq é a posição na qual meu id se encontra na lista de curtidas, em programação começa a contar a partir do 0, o -1 é um jeito qu javascript tem de mostrar que o seu id não está na lista, significando que vc não curtiu
-		if(position === -1) { //os 3= é pra mostrar que  a coisa é realment igual, comparar // -1 significa que o id não está na lista de curtidas, significando que o usuário não curtiu o post
+		if(position === -1) { //os 3= é pra mostrar que  a coisa é realmente igual, comparar // -1 significa que o id não está na lista de curtidas, significando que o usuário não curtiu o post
 			return false; //retornar que ele não curtiu
 		} else {
             return true; // se o id dele estiver lá, retornar true
