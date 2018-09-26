@@ -24,5 +24,13 @@ Meteor.methods({ //método de como se cria o post
 				likes: Meteor.userId() //de onde vai ser removido
 			}
 		});
+	},
+	"removePost": function(postId) {
+		var post = Posts.findOne({_id: postId});
+		var userId = post.userId;
+
+		if(userId === Meteor.userId()) {
+		  Posts.remove(postId);
+	    }
 	}
 });

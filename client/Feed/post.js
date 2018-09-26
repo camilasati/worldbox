@@ -20,6 +20,10 @@ Template.post.helpers({ //helper é tudo que usamos para mostrar algo no templat
 	},
 	comments: function() {
 		return Comments.find({post: this._id}).fetch(); //vai procurar na collection comments o comentário com tal _id. isso entrega todos os elementos da collection que estão linkados com o id daquele post. fetch vai entregar os comments pra gnt. para fazer o filtro só dos comments daquel post colocamos a {post: this._id}, difrente de deixar o ()
+	},
+	eUser: function() {
+		var userId = this.userId;
+		return userId === Meteor.userId();
 	}
 });
 
@@ -29,5 +33,8 @@ Template.post.events({ // events são reações a interações que aconteceram c
 	},
 	"click .dislike-button": function(event, template) {
 		Meteor.call("dislikepost", template.data._id);
+	},
+	"click .remove-button": function(event, template) {
+		Meteor.call("removePost", template.data._id); //método criado no arquivo posts.js
 	}
 });

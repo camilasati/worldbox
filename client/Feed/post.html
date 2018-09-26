@@ -9,10 +9,15 @@
           <img src="{{image}}" class="img-responsive">
         <div class="panel-body">
           {{#if userliked}} 
-          <button class="btn btn-default dislike-button">Dislike</button>
+          <i class="fa fa-heart dislike-button" role="button"></i>
           {{else}} 
-          <button class="btn btn-default like-button">Like</button>
+          <i class="fa fa-heart-o like-button" role="button"></i>
           {{/if}} 
+
+          {{#if eUser}}
+            <i class="fa fa-trash pull-right remove-button" role="button"></i>
+          {{/if}}
+
           <div>{{likenumbers}} likes</div>
           
           {{#each comments}} 
